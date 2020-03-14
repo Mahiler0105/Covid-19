@@ -5,14 +5,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Covid-19 Perú</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div id="map" class="map"></div>
+    <div class="container">
+      <div class="container-info">
+        <div class="info">
+            <div id='title' class="card">
+              <h2>Pais</h2>
+             <h4>Chileadasdasdas</h4> 
+            </div>
+            <div class="card">
+              <h2>Confirmados</h2>
+              <div class="content">
+
+                <img class="icon" src="./img/confirmar.svg" />
+                <h4>JOse</h4>
+              </div>
+            </div>
+            <div class="card">
+              <h2>Muertes</h2>
+              <div class="content">
+
+                <img class="icon" src="./img/muerto.svg" />
+                <h4>JOse</h4>
+              </div>
+            </div>
+            <div class="card">
+              <h2>Recuperados</h2>
+              <div class="content">
+              <img class="icon" src="./img/emoji.svg" />
+              <h4>JOse</h4>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="container-map">
+        <div id="map" class="map"></div>
+      </div>
+    </div>
+
     <script
       async
       defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO7Ixz9cSEkbLchbD9G1vnJ1ORz8GEIss&callback=initMap"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO7Ixz9cSEkbLchbD9G1vnJ1ORz8GEIss"
     ></script>
+    <script type="module">
+      const $map = document.querySelector("#map");
+      new window.google.maps.Map($map, {
+        center: {
+          lat: 0,
+          lng: 0
+        },
+        zoom: 3
+      });
+    </script>
   </body>
 </html>
