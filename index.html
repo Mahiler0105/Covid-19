@@ -23,21 +23,21 @@
             <h2>Confirmados</h2>
             <div class="content">
               <img class="icon" src="./img/confirmar.svg" />
-              <h4 id='confirm'>-</h4>
+              <h4 id="confirm">-</h4>
             </div>
           </div>
           <div class="card">
             <h2>Muertes</h2>
             <div class="content">
               <img class="icon" src="./img/muerto.svg" />
-              <h4 id='death'>-</h4>
+              <h4 id="death">-</h4>
             </div>
           </div>
           <div class="card">
             <h2>Recuperados</h2>
             <div class="content">
               <img class="icon" src="./img/emoji.svg" />
-              <h4 id='recover'>-</h4>
+              <h4 id="recover">-</h4>
             </div>
           </div>
         </div>
@@ -53,7 +53,7 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO7Ixz9cSEkbLchbD9G1vnJ1ORz8GEIss"
     ></script>
     <script type="module">
-      import styles from './styles.js'
+      import styles from "./styles.js";
       const $map = document.querySelector("#map");
       const map = new window.google.maps.Map($map, {
         center: {
@@ -74,22 +74,30 @@
 
       async function renderData() {
         const data = await getData();
-        console.log(data)
-        data.forEach(item => {
+        console.log(data);
+        data.forEach((item) => {
           const marker = new window.google.maps.Marker({
             position: {
               lat: item.location.lat,
               lng: item.location.lng
             },
-            map,icon:'./img/virus.svg'
+            map,
+            icon: "./img/virus.svg"
           });
-          marker.addListener('click',()=>{
-           document.getElementById('country').innerHTML= item.countryregion + "  "+ item.provincestate
-           document.getElementById('confirm').innerHTML= item.confirmed
-           document.getElementById('death').innerHTML= item.deaths
-           document.getElementById('recover').innerHTML= item.recovered
-          })
-          
+          marker.addListener("click", () => {
+            document.getElementById("country").innerHTML =
+              item.countryregion + "  " + item.provincestate;
+            document.getElementById("confirm").innerHTML = item.confirmed;
+            document.getElementById("death").innerHTML = item.deaths;
+            document.getElementById("recover").innerHTML = item.recovered;
+            const el = document.querySelectorAll(".icon");
+            el.forEach((item) => {
+              item.style.transform = "scale(1.5)";
+              setTimeout(() => {
+                item.style.transform = "scale(1)";
+              }, 1000);
+            });
+          });
         });
       }
     </script>
