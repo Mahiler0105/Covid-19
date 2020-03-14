@@ -15,33 +15,31 @@
     <div class="container">
       <div class="container-info">
         <div class="info">
-            <div id='title' class="card">
-              <h2>Pais</h2>
-             <h4>Chileadasdasdas</h4> 
+          <div id="title" class="card">
+            <h2>Pais - Estado</h2>
+            <h4 id="country">-</h4>
+          </div>
+          <div class="card">
+            <h2>Confirmados</h2>
+            <div class="content">
+              <img class="icon" src="./img/confirmar.svg" />
+              <h4 id='confirm'>-</h4>
             </div>
-            <div class="card">
-              <h2>Confirmados</h2>
-              <div class="content">
-
-                <img class="icon" src="./img/confirmar.svg" />
-                <h4>JOse</h4>
-              </div>
+          </div>
+          <div class="card">
+            <h2>Muertes</h2>
+            <div class="content">
+              <img class="icon" src="./img/muerto.svg" />
+              <h4 id='death'>-</h4>
             </div>
-            <div class="card">
-              <h2>Muertes</h2>
-              <div class="content">
-
-                <img class="icon" src="./img/muerto.svg" />
-                <h4>JOse</h4>
-              </div>
-            </div>
-            <div class="card">
-              <h2>Recuperados</h2>
-              <div class="content">
+          </div>
+          <div class="card">
+            <h2>Recuperados</h2>
+            <div class="content">
               <img class="icon" src="./img/emoji.svg" />
-              <h4>JOse</h4>
-              </div>
+              <h4 id='recover'>-</h4>
             </div>
+          </div>
         </div>
       </div>
       <div class="container-map">
@@ -55,14 +53,45 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO7Ixz9cSEkbLchbD9G1vnJ1ORz8GEIss"
     ></script>
     <script type="module">
+      import styles from './styles.js'
       const $map = document.querySelector("#map");
-      new window.google.maps.Map($map, {
+      const map = new window.google.maps.Map($map, {
         center: {
           lat: 0,
           lng: 0
         },
-        zoom: 3
+        zoom: 3,
+        styles
       });
+      renderData();
+      async function getData() {
+        const response = await fetch(
+          "https://wuhan-coronavirus-api.laeyoung.endpoint.ainize.ai/jhu-edu/latest"
+        );
+        const data = await response.json();
+        return data;
+      }
+
+      async function renderData() {
+        const data = await getData();
+        console.log(data)
+        data.forEach(item => {
+          const marker = new window.google.maps.Marker({
+            position: {
+              lat: item.location.lat,
+              lng: item.location.lng
+            },
+            map,icon:'./img/virus.svg'
+          });
+          marker.addListener('click',()=>{
+           document.getElementById('country').innerHTML= item.countryregion + "  "+ item.provincestate
+           document.getElementById('confirm').innerHTML= item.confirmed
+           document.getElementById('death').innerHTML= item.deaths
+           document.getElementById('recover').innerHTML= item.recovered
+          })
+          
+        });
+      }
     </script>
   </body>
 </html>
