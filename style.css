@@ -1,92 +1,133 @@
-body{
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    background:#3d5f53;
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: #3d5f53;
 }
-.map{
-    margin: 65px 50px 0px 20px ;
-    width: 85%;
-    height: 90%;
-    border-radius: 10px;
-    box-shadow: 1px 1px 14px #000609;
-}
-.container-info{
-    margin:50px auto 80px 30px;
-    width: 50%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
+.map {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 1px 1px 14px #000609;
 }
 
-.card{
-    background: linear-gradient(to top, #088876, #4df32fe0);
-    box-shadow: 1px 1px 14px #000609;
-    text-align: center;
-    padding-bottom: 10px; 
-    margin: 20px 15px 0px 15px;
-    border-radius: 10px;
+.map-container {
+  margin: 65px 50px 0px 50px;
+  width: 65%;
+  height: 87%;
+  border-radius: 10px;
+  padding: 0px 0px 0px 0px;
+  background: #fff;
+}
+.container-info {
+  margin: 50px auto 80px 30px;
+  width: 50%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
 }
 
-#title{
-    background: linear-gradient(to top, #088876, #4df32fe0);
-    box-shadow: 1px 1px 14px #000609;
-    text-align: center;
-    padding-bottom: 10px; 
-    margin: 20px 15px 0px 15px;
-    border-radius: 10px;
+.card {
+  background: linear-gradient(to top, #088876, #4df32fe0);
+  box-shadow: 1px 1px 14px #000609;
+  text-align: center;
+  padding-bottom: 10px;
+  margin: 20px 15px 0px 15px;
+  border-radius: 10px;
 }
 
+#title {
+  background: linear-gradient(to top, #088876, #4df32fe0);
+  box-shadow: 1px 1px 14px #000609;
+  text-align: center;
+  padding-bottom: 10px;
+  margin: 20px 15px 0px 15px;
+  border-radius: 10px;
+}
 
 img {
-    width: 60px;
-    height: 60px;
-    margin-right: 50px;
-    transition: width 1s, height 1s, transform 1s;
-    -moz-transition: width 1s, height 1s, -moz-transform 1s;
-    -webkit-transition: width 1s, height 1s, -webkit-transform 1s;
-    -o-transition: width 1s, height 1s,-o-transform 1s;
+  width: 60px;
+  height: 60px;
+  margin-right: 50px;
+  transition: width 1s, height 1s, transform 1s;
+  -moz-transition: width 1s, height 1s, -moz-transform 1s;
+  -webkit-transition: width 1s, height 1s, -webkit-transform 1s;
+  -o-transition: width 1s, height 1s, -o-transform 1s;
 }
 
-h2{
-    margin-top: 5px;
-    margin-bottom: 10px;
+h2 {
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
-.card .content{
-    
-    margin-bottom: 10px;
+.card .content {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+h4 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #fff;
+}
+#title h2 {
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#title h4 {
+  font-size: 25px;
+  margin: 0px;
+}
+.container-info #titl {
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 800px) {
+  body {
     display: flex;
-    flex-direction:row;
-    justify-content: center;
+    flex-direction: column;
+  }
+  .container-info {
+    width: 95% !important;
+    margin: 10px;
+    margin-bottom: 100px;
+    padding-top: 20px;
+  }
+
+  .container-info #titl {
+    font-size: 40px !important;
+  }
+
+  #map {
+    margin: 0;
+  }
+  .map-container {
+    width: 92%;
+    height: 40rem;
+    margin: 5px 20px 10px 20px;
+  }
 }
 
-
-h4{
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-weight: bold;
-    font-size: 18px;
-    color: #fff;
-}
-#title h2{
+@media (max-width: 968px) {
+  .container-info #titl {
     font-size: 30px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 20px;
+  }
 }
-
-
-#title h4{
-    font-size: 25px;
-    margin: 0px;
-} 
-.container-info #titl{
-    color: #fff;
-    text-align: center;
-    font-size: 40px;
-    margin:0;
-    margin-bottom: 10px;
-}
+@media (max-width: 383px) {
+    .container-info #titl {
+      font-size: 2px  !important;
+    }
+  }
