@@ -12,11 +12,11 @@
     />
   </head>
   <body>
-    <div class="container">
+    
       <div class="container-info">
-        <div class="info">
-          <div id="title" class="card">
-            <h2>Pais - Estado</h2>
+        <h4 id='titl'>COVID-19 REALTIME</h4>
+          <div id="title">
+            <h2>Pais - Ciudad</h2>
             <h4 id="country">-</h4>
           </div>
           <div class="card">
@@ -39,12 +39,11 @@
               <img class="icon" src="./img/emoji.svg" />
               <h4 id="recover">-</h4>
             </div>
-          </div>
         </div>
       </div>
-      <div class="container-map">
+      
         <div id="map" class="map"></div>
-      </div>
+     
     </div>
 
     <script
@@ -92,7 +91,7 @@
             document.getElementById("recover").innerHTML = item.recovered;
             const el = document.querySelectorAll(".icon");
             el.forEach((item) => {
-              item.style.transform = "scale(1.5)";
+              item.style.transform = "scale(1.2)";
               setTimeout(() => {
                 item.style.transform = "scale(1)";
               }, 1000);
