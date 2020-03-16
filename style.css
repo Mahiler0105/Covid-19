@@ -24,7 +24,7 @@ body {
 .container-info {
   margin: 50px auto 80px 30px;
   width: 50%;
-  height: 80%;
+  /* height: 80%; */
   display: flex;
   flex-direction: column;
 }
@@ -96,27 +96,21 @@ h4 {
 
 @media (max-width: 800px) {
   body {
-    display: flex;
     flex-direction: column;
   }
   .container-info {
-    width: 95% !important;
-    margin: 10px;
-    margin-bottom: 100px;
-    padding-top: 20px;
+    width: 97% !important;
+    margin: 10px 20px 10px 5px;
+    margin-bottom: 30px;
+    padding-top: 1px;
   }
-
   .container-info #titl {
-    font-size: 40px !important;
-  }
-
-  #map {
-    margin: 0;
+    font-size: 32px !important;
   }
   .map-container {
-    width: 92%;
-    height: 40rem;
-    margin: 5px 20px 10px 20px;
+    width: 97vw;
+    height: 85vh;
+    margin: 0px 5px 10px 5px;
   }
 }
 
@@ -126,8 +120,3 @@ h4 {
     margin-top: 20px;
   }
 }
-@media (max-width: 383px) {
-    .container-info #titl {
-      font-size: 2px  !important;
-    }
-  }
