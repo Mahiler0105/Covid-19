@@ -1,11 +1,84 @@
 body {
-  margin: 0;
   font-family: "Poppins", sans-serif;
   width: 100vw;
   height: 100vh;
+  margin: 0;
   display: flex;
   background: #3d5f53;
 }
+
+/* SECCION DE INFORMACION */
+
+.container-info {
+  width: 50%;
+  margin: 50px auto 80px 30px;
+}
+
+.card {
+  margin: 20px 15px 0px 15px;
+  padding-bottom: 10px;
+  text-align: center;
+  background: linear-gradient(to top, #088876, #4df32fe0);
+  box-shadow: 1px 1px 14px #000609;
+  border-radius: 10px;
+}
+
+.card .content {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.container-info #title-app {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+}
+
+.title {
+  background: linear-gradient(to top, #088876, #4df32fe0);
+  box-shadow: 1px 1px 14px #000609;
+  text-align: center;
+  padding-bottom: 10px;
+  margin: 20px 15px 0px 15px;
+  border-radius: 10px;
+}
+
+.title h2 {
+  font-size: 30px;
+}
+
+.title h4 {
+  font-size: 25px !important;
+  margin: 0px;
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  margin-right: 50px;
+  transition: width 1s, height 1s, transform 1s;
+  -moz-transition: width 1s, height 1s, -moz-transform 1s;
+  -webkit-transition: width 1s, height 1s, -webkit-transform 1s;
+  -o-transition: width 1s, height 1s, -o-transform 1s;
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.card h4 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #fff;
+}
+
+/* SECCION DE MAPA */
+
 .map {
   width: 100%;
   height: 100%;
@@ -21,102 +94,22 @@ body {
   padding: 0px 0px 0px 0px;
   background: #fff;
 }
-.container-info {
-  margin: 50px auto 80px 30px;
-  width: 50%;
-  /* height: 80%; */
-  display: flex;
-  flex-direction: column;
-}
 
-.card {
-  background: linear-gradient(to top, #088876, #4df32fe0);
-  box-shadow: 1px 1px 14px #000609;
-  text-align: center;
-  padding-bottom: 10px;
-  margin: 20px 15px 0px 15px;
-  border-radius: 10px;
-}
 
-#title {
-  background: linear-gradient(to top, #088876, #4df32fe0);
-  box-shadow: 1px 1px 14px #000609;
-  text-align: center;
-  padding-bottom: 10px;
-  margin: 20px 15px 0px 15px;
-  border-radius: 10px;
-}
-
-img {
-  width: 60px;
-  height: 60px;
-  margin-right: 50px;
-  transition: width 1s, height 1s, transform 1s;
-  -moz-transition: width 1s, height 1s, -moz-transform 1s;
-  -webkit-transition: width 1s, height 1s, -webkit-transform 1s;
-  -o-transition: width 1s, height 1s, -o-transform 1s;
-}
-
-h2 {
-  margin-top: 5px;
-  margin-bottom: 10px;
-}
-
-.card .content {
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-h4 {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  font-weight: bold;
-  font-size: 18px;
-  color: #fff;
-}
-#title h2 {
-  font-size: 30px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#title h4 {
-  font-size: 25px;
-  margin: 0px;
-}
-.container-info #titl {
-  color: #fff;
-  text-align: center;
-  font-size: 40px;
-  margin: 0;
-  margin-bottom: 10px;
-}
+/* DISEÑO RESPONSIVE */
 
 @media (max-width: 800px) {
   body {
     flex-direction: column;
   }
   .container-info {
-    width: 97% !important;
+    width: 97% ;
     margin: 10px 20px 10px 5px;
     margin-bottom: 30px;
-    padding-top: 1px;
-  }
-  .container-info #titl {
-    font-size: 32px !important;
   }
   .map-container {
     width: 97vw;
-    height: 85vh;
+    height: 90vh;
     margin: 0px 5px 10px 5px;
-  }
-}
-
-@media (max-width: 968px) {
-  .container-info #titl {
-    font-size: 30px;
-    margin-top: 20px;
   }
 }

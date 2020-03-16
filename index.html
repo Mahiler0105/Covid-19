@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Covid-19 Perú</title>
+    <title>Covid-19 RealTime</title>
+    <!-- ICONO PESTAÑA -->
+    <link rel="shortcut icon" href="./img/virus.svg" />
+    <!-- ESTILOS Y FUENTE -->
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
@@ -12,48 +14,44 @@
     />
   </head>
   <body>
-     
     <div class="container-info">
-        <h4 id='titl'>COVID-19 REALTIME</h4>
-          <div id="title">
+        <h4 id='title-app'>COVID-19 REALTIME</h4>
+          <div class="title card">
             <h2>Pais - Ciudad</h2>
             <h4 id="country">-</h4>
           </div>
           <div class="card">
             <h2>Confirmados</h2>
             <div class="content">
-              <img class="icon" src="./img/confirmar.svg" />
+              <img class="icon" src="./img/confirmar.svg" alt="check" />
               <h4 id="confirm">-</h4>
             </div>
           </div>
           <div class="card">
             <h2>Muertes</h2>
             <div class="content">
-              <img class="icon" src="./img/muerto.svg" />
+              <img class="icon" src="./img/muerto.svg" alt="dead"/>
               <h4 id="death">-</h4>
             </div>
           </div>
           <div class="card">
             <h2>Recuperados</h2>
             <div class="content">
-              <img class="icon" src="./img/emoji.svg" />
+              <img class="icon" src="./img/emoji.svg" alt="recover" />
               <h4 id="recover">-</h4>
             </div>
-        </div>
+          </div>
       </div>
-      
-       
-     
-    </div>
     <div class="map-container">
       <div id="map" class="map"></div>
-      </div> 
+    </div> 
 
     <script
       async
       defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO7Ixz9cSEkbLchbD9G1vnJ1ORz8GEIss"
     ></script>
+ 
     <script type="module">
       import styles from "./styles.js";
       const $map = document.querySelector("#map");
@@ -76,7 +74,6 @@
 
       async function renderData() {
         const data = await getData();
-        console.log(data);
         data.forEach((item) => {
           const marker = new window.google.maps.Marker({
             position: {
@@ -92,8 +89,8 @@
             document.getElementById("confirm").innerHTML = item.confirmed;
             document.getElementById("death").innerHTML = item.deaths;
             document.getElementById("recover").innerHTML = item.recovered;
-            const el = document.querySelectorAll(".icon");
-            el.forEach((item) => {
+            const icons = document.querySelectorAll(".icon");
+            icons.forEach(item => {
               item.style.transform = "scale(1.2)";
               setTimeout(() => {
                 item.style.transform = "scale(1)";
